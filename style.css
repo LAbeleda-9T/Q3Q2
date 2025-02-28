@@ -1,0 +1,75 @@
+body {
+            background-color: #121212; 
+            color: #e0e0e0; 
+            font-family: 'Creepster', sans-serif;
+        }
+
+        div {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(34, 34, 34, 0.85);  
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+        }
+
+        #header-image {
+            display: block;
+            margin: 0 auto;
+            width: 100%; 
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);  
+        }
+
+        label {
+            color: #e0e0e0;  
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        details {
+            background-color: #1f1f1f;  
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+        }
+
+        summary {
+            color: #f44336;  
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        i {
+            color: #888; 
+        }
+
+        #ticket-image {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            padding: 10px;
+            margin: 8px 0; 
+            background-color: #333;  
+            color: #e0e0e0;  
+            border: 2px solid #8B0000;  
+            border-radius: 5px; 
+            font-size: 16px;  
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
