@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Q3 Q2 | Haunted House Ticketing</title>
+
+</head>
+<body>
+
+<div>
+    <!-- Image  -->
+    <img src="p3.gif" id="header-image">
+
+    <hr/>
+
+    <!-- Personal Info Section -->
+    <details> 
+        <summary> Personal Info</summary>
+        <i> Fill out the form </i>
+    
+        <form action="">
+            <label for=""> Complete Name: </label>
+            <input type="text" id="fullname" placeholder="Add your full name here">
+
+            <label for=""> Email: </label>
+            <input type="email" id="email" placeholder="Add your email here">
+
+            <!-- Unique ID for button -->
+            <button type="button" id="submit-info" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="submitInfo()">Submit info</button>
+        </form>
+    </details>
+
+    <!-- Ticket Price Section -->
+    <details>
+        <summary>Ticket Price</summary>
+        <i>Choose your ticket category and experience...</i>
+
+        <form action="">
+            <label for="experience">Choose your experience:</label>
+            <select id="experience">
+                <option value="light">Light</option>
+                <option value="average">Average</option>
+                <option value="extreme">Extreme</option>
+            </select>
+            <br><br>
+
+            <label for="category">Choose your category:</label>
+            <select id="category">
+                <option value="regular">Regular</option>
+                <option value="pwd">PWD</option>
+                <option value="senior">Senior Citizen</option>
+                <option value="student">Student</option>
+            </select>
+            <br><br>
+
+            <!-- ID for button -->
+            <button type="button" id="submit-price" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="submitPrice()">Submit</button>
+        </form>
+    </details>
+
+    <!-- Print Ticket Section -->
+    <details>
+        <summary>Print Ticket</summary>
+        <i>Click to print your ticket...</i><br>
+        <img id="ticket-image" src="ticket.png" alt="Ticket"><br>
+        
+        <button type="button" id="print-ticket" onclick="printTicket()" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">Print Ticket</button>
+
+        <button type="button" onClick="window.location.reload()" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">Buy more ticket</button>
+    </details>
+
+</div>
+
+<script type="text/javascript">
+    // onmouseover js event
+    function mouseOver(button){
+        button.style.background = "#8b0000";
+        button.style.color = "white";
+    }
+
+    // onmouseout js event
+    function mouseOut(button){
+        button.style.background = "#f44336";
+        button.style.color = "black";
+    }
+
+    // onchange js event for fullname
+    document.getElementById("fullname").onchange = function(){changeToCapital()}
+
+    function changeToCapital(){
+        var fname = document.getElementById("fullname");
+        fname.value = fname.value.toUpperCase();
+    }
+
+    // Submit Info
+    function submitInfo() {
+        var name = document.getElementById("fullname").value;
+        if (name) {
+            alert("Thanks " + name + "! Proceed to the next section.");
+        } else {
+            alert("Please enter your full name.");
+        }
+    }
+
+    // Ticket Price Section and Discount
+    function submitPrice() {
+        var experience = document.getElementById("experience").value;
+        var category = document.getElementById("category").value;
+        var basePrice = 250;
+        var discount = 0;
+
+        // Calculate Discount for PWD, Senior, Student
+        if (category === "pwd" || category === "senior" || category === "student") {
+            discount = 0.20; 
+        }
+
+        var finalPrice = basePrice * (1 - discount);
+
+        alert("Your ticket price is " + finalPrice.toFixed(2) + ". Proceed to the next section.");
+    }
+
+    // Print Ticket Section
+    function printTicket() {
+        alert("Check your email for your ticket. Thank you!");
+    }
+</script>
+
+</body>
+</html>
